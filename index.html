@@ -1,0 +1,183 @@
+<!-- The main content area -->
+
+
+
+<!-- The tag below includes the markup for each post - partials/post-card.html -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+
+<style>
+  .layer{position:absolute;display:table;top:0;left:0;width:100%;height:100%}
+  .layer .layer_inner{display:table-cell;text-align:center;vertical-align:middle}
+  .layer .content{display:inline-block;font-family: "Bodoni MT";font-size:50px;color: whitesmoke;font-weight: lighter;}
+
+  * {margin:0;padding:0;box-sizing:border-box;}
+  ul, li {list-style:none;}
+
+  [name="slide"] {display:none;}
+  .slidebox {width:100%;
+    height:100%;margin:0 auto;text-align:center;}
+  .slidebox img {max-width:100%;}
+  .slidebox .slidelist {
+    white-space:nowrap;
+    font-size:0;
+    overflow:hidden;
+  }
+  .slidebox .slideitem {
+    position:relative;
+    display:inline-block;
+    vertical-align:middle;
+    width:100%;
+    transition:all .35s;
+
+  }
+  .slidebox img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 100%;
+    min-height: 100%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+
+  a {
+    text-decoration-line: none;
+    /*   text-decoration-line: underline; */
+    /*   text-decoration-line: overline; */
+    /*   text-decoration-line: line-through; */
+    /*   text-decoration-line: underline line-through overline; */
+    color: white;
+    font-family: 'Goldman', cursive;
+
+  }
+  /* 페이징 스타일 */
+  .paginglist {text-align:center;}
+  .paginglist > li {display:inline-block;vertical-align:middle; background-size: cover;}
+  .paginglist > li > label {display:block;padding:10px 30px;border-radius:10px;background:#ccc;cursor:pointer;}
+  .paginglist > li:hover > label {background:#333;}
+
+  [id="slide01"]:checked ~ .slidelist .slideitem {transform:translateX(0);animation:slide01 13.5s infinite; animation-timing-function: ease-in-out;animation-duration}
+  [id="slide02"]:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 13.5s infinite;animation-timing-function: ease-in-out;animation-duration}
+  [id="slide03"]:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 13.5s infinite;animation-timing-function: ease-in-out;animation-duration}
+  [id="slide04"]:checked ~ .slidelist .slideitem {transform:translateX(-300%);animation:slide04 13.5s infinite;animation-timing-function: ease-in-out;animation-duration}
+
+  @keyframes slide01 {
+    0% {left:0%;}
+    23% {left:0%;}
+    25% {left:-100%;}
+    48% {left:-100%;}
+    50% {left:-200%;}
+    73% {left:-200%;}
+    75% {left:-300%;}
+    98% {left:-300%;}
+    100% {left:0%;}
+  }
+  @keyframes slide02 {
+    0% {left:0%;}
+    23% {left:0%;}
+    25% {left:-100%;}
+    48% {left:-100%;}
+    50% {left:-200%;}
+    73% {left:-200%;}
+    75% {left:100%;}
+    98% {left:100%;}
+    100% {left:0%;}
+  }
+  @keyframes slide03 {
+    0% {left:0%;}
+    23% {left:0%;}
+    25% {left:-100%;}
+    48% {left:-100%;}
+    50% {left:200%;}
+    73% {left:200%;}
+    75% {left:100%;}
+    98% {left:100%;}
+    100% {left:0%;}
+  }
+  @keyframes slide04 {
+    0% {left:0%;}
+    23% {left:0%;}
+    25% {left:300%;}
+    48% {left:300%;}
+    50% {left:200%;}
+    73% {left:200%;}
+    75% {left:100%;}
+    98% {left:100%;}
+    100% {left:0%;}
+  }
+</style>
+<div class="layer">
+  <div class="layer_inner">
+    <div style="position: relative; z-index: 2;">
+      <div class="content"><a href="/works" style = "-webkit-text-stroke: 1px black;font-size: 4rem ">Han Hyeon</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slidebox"; style="position: relative; z-index: 1;">
+  <input type="radio" name="slide" id="slide01" checked>
+  <input type="radio" name="slide" id="slide02">
+  <input type="radio" name="slide" id="slide03">
+  <input type="radio" name="slide" id="slide04">
+  <ul class="slidelist">
+    <li class="slideitem">
+      <div>
+        <label for="slide04" class="left"></label>
+        <label for="slide02" class="right"></label>
+        <a href="/works"  style="text-align:right"><img src="/assets/ins/bc1.jpg"></a>
+      </div>
+    </li>
+    <li class="slideitem">
+      <div>
+        <label for="slide01" class="left"></label>
+        <label for="slide03" class="right"></label>
+        <a href="/works"  style="text-align:right"><img src="/assets/ins/bc2.jpg"></a>
+      </div>
+    </li>
+    <li class="slideitem">
+      <div>
+        <label for="slide02" class="left"></label>
+        <label for="slide04" class="right"></label>
+        <a href="/works"  style="text-align:right"><img src="/assets/ins/bc3.jpg"></a>
+      </div>
+    </li>
+    <li class="slideitem">
+      <div>
+        <label for="slide03" class="left"></label>
+        <label for="slide01" class="right"></label>
+        <a href="/works"  style="text-align:right"><img src="/assets/ins/bc4.jpg"></a>
+      </div>
+    </li>
+  </ul>
+  <!-- <ul class="paginglist">
+      <li>
+          <label for="slide01"></label>
+      </li>
+      <li>
+          <label for="slide02"></label>
+      </li>
+      <li>
+          <label for="slide03"></label>
+      </li>
+      <li>
+          <label for="slide04"></label>
+      </li>
+  </ul> -->
+
+</div>
+
+
+
+
+
+
+</div>
+<style>
+  @media (max-width:34em){html{font-size:1011px;}}
+</style>
